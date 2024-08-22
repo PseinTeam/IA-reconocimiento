@@ -22,7 +22,7 @@ def create_model():
 
 train_datagen = ImageDataGenerator(rescale=1./255)
 train_generator = train_datagen.flow_from_directory(
-    'C:/Users/Diego Jara/Desktop/Pruebas IA imagenes/dataset_entrenamiento',
+    '../dataset_entrenamiento',
     target_size=(224, 224),
     batch_size=32,
     class_mode='binary'
@@ -30,7 +30,7 @@ train_generator = train_datagen.flow_from_directory(
 
 test_datagen = ImageDataGenerator(rescale=1./255)
 test_generator = test_datagen.flow_from_directory(
-    'C:/Users/Diego Jara/Desktop/Pruebas IA imagenes/dataset_prueba',
+    '../dataset_prueba',
     target_size=(224, 224),
     batch_size=32,
     class_mode='binary'
@@ -38,4 +38,4 @@ test_generator = test_datagen.flow_from_directory(
 
 model = create_model()
 model.fit(train_generator, epochs=50, validation_data=test_generator)
-model.save('C:/Users/Diego Jara/Desktop/Pruebas IA imagenes/modelos/modelo_seguridad.h5')
+model.save('..modelos/modelo_seguridad.h5')

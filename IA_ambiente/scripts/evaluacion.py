@@ -24,7 +24,7 @@ def create_model():
 # Crear ImageDataGenerators para entrenamiento y prueba
 train_datagen = ImageDataGenerator(rescale=1./255)
 train_generator = train_datagen.flow_from_directory(
-    'C:/Users/Diego Jara/Desktop/Pruebas IA imagenes/dataset_entrenamiento',
+    '../dataset_entrenamiento',
     target_size=(224, 224),
     batch_size=32,
     class_mode='binary'
@@ -32,7 +32,7 @@ train_generator = train_datagen.flow_from_directory(
 
 test_datagen = ImageDataGenerator(rescale=1./255)
 test_generator = test_datagen.flow_from_directory(
-    'C:/Users/Diego Jara/Desktop/Pruebas IA imagenes/dataset_prueba',
+    '../dataset_prueba',
     target_size=(224, 224),
     batch_size=32,
     class_mode='binary'
@@ -40,7 +40,7 @@ test_generator = test_datagen.flow_from_directory(
 
 
 # Cargar el modelo
-model = tf.keras.models.load_model('C:/Users/Diego Jara/Desktop/Pruebas IA imagenes/modelos/modelo_seguridad.h5')
+model = tf.keras.models.load_model('../modelos/modelo_seguridad.h5')
 
 # Evaluar el modelo
 loss, accuracy = model.evaluate(test_generator)

@@ -3,7 +3,7 @@ from tensorflow.keras.preprocessing import image
 import numpy as np
 
 # Cambia esta ruta si el archivo del modelo está en una ubicación diferente
-model_path = 'C:/Users/Diego Jara/Desktop/Pruebas IA imagenes/modelos/modelo_seguridad.h5'
+model_path = '../modelos/modelo_seguridad.h5'
 
 # Cargar el modelo
 try:
@@ -24,7 +24,7 @@ def predict_image(img_path):
     return predictions[0][0]
 
 # Ruta a la imagen de prueba
-img_path = 'C:/Users/Diego Jara/Desktop/Pruebas IA imagenes/dataset_prueba/zona_segura/imagen4.jpg'
+img_path = '../dataset_prueba/zona_segura/imagen4.jpg'
 
 # Realizar la predicción
 resultado = predict_image(img_path)
